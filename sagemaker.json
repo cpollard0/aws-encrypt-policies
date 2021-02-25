@@ -1,0 +1,55 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Action": [
+        "sagemaker:CreateAutoMLJob",
+        "sagemaker:CreateDataQualityJobDefinition",
+        "sagemaker:CreateDomain",
+        "sagemaker:CreateEndpointConfig",
+        "sagemaker:CreateHyperParameterTuningJob",
+        "sagemaker:CreateLabelingJob",
+        "sagemaker:CreateModelBiasJobDefinition",
+        "sagemaker:CreateModelExplainabilityJobDefinition",
+        "sagemaker:CreateModelQualityJobDefinition",
+        "sagemaker:CreateMonitoringSchedule",
+        "sagemaker:CreateNotebookInstance",
+        "sagemaker:CreateProcessingJob",
+        "sagemaker:CreateTrainingJob",
+        "sagemaker:CreateTransformJob",
+        "sagemaker:UpdateMonitoringSchedule"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "sagemaker:VolumeKmsKey": true
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Action": [
+        "sagemaker:CreateAutoMLJob",
+        "sagemaker:CreateDataQualityJobDefinition",
+        "sagemaker:CreateDomain",
+        "sagemaker:CreateHyperParameterTuningJob",
+        "sagemaker:CreateLabelingJob",
+        "sagemaker:CreateModelBiasJobDefinition",
+        "sagemaker:CreateModelExplainabilityJobDefinition",
+        "sagemaker:CreateModelQualityJobDefinition",
+        "sagemaker:CreateMonitoringSchedule",
+        "sagemaker:CreateProcessingJob",
+        "sagemaker:CreateTrainingJob",
+        "sagemaker:CreateTransformJob",
+        "sagemaker:UpdateMonitoringSchedule"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Null": {
+          "sagemaker:OutputKmsKey": true
+        }
+      }
+    }
+  ]
+}
